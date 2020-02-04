@@ -18,4 +18,5 @@ denomi_pe %>%
   summarise(pop=sum(pop)) %>% 
   mutate(cases=700,
          n_exposed=1000*cases,
-         prop_exposed=1-(n_exposed/pop))
+         prop_exposed=n_exposed/pop,
+         prop_not_exposed=1-prop_exposed)

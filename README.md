@@ -31,10 +31,12 @@ Case-control analysis for a Guillain-Barré Syndrome (SGB) outbreak-response inv
 - Record all market names as closed options in the questionnaire, to avoid free-text
   normalization work later (see the market-name matching in `sgb-cleandb.R`).
 
+<!--
 ## References
 
 - <https://ggplot2tutor.com/streetmaps/streetmaps/>
 - <https://forum.openstreetmap.org/viewtopic.php?id=25490&p=11>
+-->
 
 ## Acknowledgements
 

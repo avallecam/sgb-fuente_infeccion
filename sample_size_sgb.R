@@ -20,3 +20,6 @@ denomi_pe %>%
          n_exposed=1000*cases,
          prop_exposed=n_exposed/pop,
          prop_not_exposed=1-prop_exposed)
+
+# package
+# https://www.rdocumentation.org/packages/epiR/versions/1.0-4/topics/epi.ccsize

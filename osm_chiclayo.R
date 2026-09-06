@@ -4,9 +4,6 @@ library(sf)
 library(nominatim)
 library(ggsflabel)
 library(magrittr)
-# library(ggmap)
-# register_google(key = "REDACTED_GOOGLE_MAPS_KEY")
-# ggmap_credentials()
 
 theme_set(theme_bw())
 
@@ -132,7 +129,7 @@ small_streets <- getbb("Lambayeque Peru")%>%
 
 # sí replica buscador: https://nominatim.openstreetmap.org/search.php?q=mercado+chiclayo&polygon_geojson=1&exclude_place_ids=267181192&accept-language=en-US%2Cen%3Bq%3D0.5
 markets <- osm_search(query = "mercado+chiclayo+lambayeque+peru",
-                      key = "REDACTED_NOMINATIM_KEY",limit = 10) %>% 
+                      key = Sys.getenv("NOMINATIM_KEY"),limit = 10) %>%
   as_tibble() %>% 
   mutate(new_name=str_replace(display_name,"\\,.*$",""),
          place_size=case_when(place_id=="44747738"~4,
@@ -149,7 +146,7 @@ market_network <- tibble(from=c(4,2,4),
                          width=c(4,2,1))
 
 # osm_search(query = "supermarket+chiclayo+lambayeque+peru",
-#            key = "REDACTED_NOMINATIM_KEY",limit = 10) %>% 
+#            key = Sys.getenv("NOMINATIM_KEY"),limit = 10) %>%
 #   as_tibble() %>% 
 #   select(display_name)
 
